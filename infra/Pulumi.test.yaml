@@ -1,0 +1,5 @@
+config:
+  aws:region: us-west-2
+  cicd-workshop:errorDocument: error.html
+  cicd-workshop:indexDocument: index.html
+  cicd-workshop:path: ./www
