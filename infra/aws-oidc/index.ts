@@ -33,6 +33,13 @@ const role = new aws.iam.Role("oidcProviderRole", {
     })),
 });
 
+
+// TODO - attach other policies to the role as needed
+const rolePolicyAttachment = new aws.iam.RolePolicyAttachment("oidcProviderRolePolicyAttachment", {
+    role: role,
+    policyArn: "arn:aws:iam::aws:policy/AdministratorAccess",
+});
+
 // Create a new Pulumi Cloud access token to be used to create the environment
 const accessToken = new pulumiservice.AccessToken("myAccessToken", {
     description: "Used to create an ESC Environment for AWS OIDC",
