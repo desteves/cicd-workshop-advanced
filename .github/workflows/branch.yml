@@ -22,6 +22,10 @@ jobs:
       - name: Install Dependencies
         working-directory: ./infra
         run: npm install
+      
+      - name: Install PaC Dependencies
+        working-directory: ./infra/policypack
+        run: npm install
 
       - name: Create the resources
         uses: pulumi/actions@v5
