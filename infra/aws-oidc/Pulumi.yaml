@@ -1,0 +1,7 @@
+name: aws-oidc
+runtime: nodejs
+description: A minimal TypeScript Pulumi program to set up AWS OIDC+Pulumi Cloud+ESC
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: https://github.com/desteves/aws-oidc-typescript/infra

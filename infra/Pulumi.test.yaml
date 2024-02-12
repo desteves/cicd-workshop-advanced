@@ -7,5 +7,7 @@ config:
   cicd-workshop:path: ./www
 
 # Part 3,
+# environment:
+#   - pulumi-cicd-workshop 
 environment:
-  - pulumi-cicd-workshop 
+  - aws-oidc-env
