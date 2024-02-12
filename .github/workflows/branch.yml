@@ -1,4 +1,4 @@
-name: pipeline
+name: branch
 
 on:
   pull_request:
@@ -23,10 +23,12 @@ jobs:
         working-directory: ./infra
         run: npm install
 
-      - uses: pulumi/actions@v5
+      - name: Create the resources
+        uses: pulumi/actions@v5
         with:
           command: up
           stack-name: zephyr/cicd-workshop/test # UPDATE THIS
           work-dir: ./infra
+          policyPacks: policypack
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
