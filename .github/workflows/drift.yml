@@ -1,0 +1,40 @@
+name: drift
+on:
+  schedule:
+    # Runs at 06:00
+    # Actions schedules run at most every 5 minutes.
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}
+
+env:
+  PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    name: Drift Detection
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+            
+      - name: setup node 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        working-directory: ./infra
+        run: npm install
+        
+      - name: Install PaC Dependencies
+        working-directory: ./infra/policypack
+        run: npm install
+        
+      - name: pulumi preview
+        uses: pulumi/actions@v5
+        with:
+          command: preview
+          refresh: true
+          stack-name: zephyr/cicd-workshop/test ## Update this
+          expect-no-changes: true
+          work-dir: ./infra
