@@ -33,7 +33,6 @@ const role = new aws.iam.Role("oidcProviderRole", {
     })),
 });
 
-
 // TODO - attach other policies to the role as needed
 const rolePolicyAttachment = new aws.iam.RolePolicyAttachment("oidcProviderRolePolicyAttachment", {
     role: role,
