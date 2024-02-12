@@ -8,12 +8,22 @@
         "tsconfig.json"
     ],
     "dependencies": {
+<<<<<<< HEAD
         "@pulumi/aws-compliance-policies": "^0",
         "@pulumi/compliance-policy-manager": "^0",
         "@pulumi/policy": "^1.7.0",
+=======
+        "@pulumi/aws-compliance-policies": "^0.1.0",
+        "@pulumi/compliance-policy-manager": "^0.1.2",
+        "@pulumi/policy": "^1.9.0",
+>>>>>>> 42ab799ebe2242685dc0f2d432e7d537a339773d
         "@pulumi/pulumi": "^3.0.0"
     },
     "devDependencies": {
         "@types/node": "^20.0.0"
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 42ab799ebe2242685dc0f2d432e7d537a339773d
