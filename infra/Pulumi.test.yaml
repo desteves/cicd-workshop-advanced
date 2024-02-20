@@ -4,7 +4,7 @@ config:
   # aws:region:  us-east-1
   cicd-workshop:errorDocument: error.html
   cicd-workshop:indexDocument: index.html
-  cicd-workshop:path: ./www
+  cicd-workshop:path: ../app
 
 # Part 3,
 # environment:
